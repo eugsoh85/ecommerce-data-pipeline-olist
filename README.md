@@ -63,9 +63,9 @@ All dashboards are powered by **star schema marts** built in dbt and optimized f
 
 ```
 .
-├── meltano-ingestion/        → Meltano config (EL)
-├── dbt_project/              → dbt models (Staging, Core, Marts)
-├── dagster_orchestration/   → Dagster orchestration pipeline
+├── meltano-ingest-olist/     → Meltano config (EL)
+├── olist_dbt/                → dbt models (Staging, Core, Marts)
+├── olist_dagster/            → Dagster orchestration pipeline
 ├── notebooks/                → Exploratory notebooks (EDA, profiling)
 ├── data/                     → Raw CSVs (Olist dataset)
 ├── .keys/                    → GCP service account keys (excluded from Git)
