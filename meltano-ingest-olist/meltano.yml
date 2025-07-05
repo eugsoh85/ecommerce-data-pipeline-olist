@@ -1,0 +1,58 @@
+version: 1
+default_environment: dev
+project_id: 648e223d-bb59-4237-8b56-03c7b05e3086
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: product_category_name_translation
+        path: ./raw/product_category_name_translation.csv
+        keys: [product_category_name]
+      - entity: olist_customers_dataset
+        path: ./raw/olist_customers_dataset.csv
+        keys: [customer_id]
+      - entity: olist_geolocation_dataset
+        path: ./raw/olist_geolocation_dataset.csv
+        keys: [geolocation_zip_code_prefix]
+      - entity: olist_orders_dataset
+        path: ./raw/olist_orders_dataset.csv
+        keys: [order_id]
+      - entity: olist_order_items_dataset
+        path: ./raw/olist_order_items_dataset.csv
+        keys: [order_id, order_item_id]
+      - entity: olist_order_payments_dataset
+        path: ./raw/olist_order_payments_dataset.csv
+        keys: [order_id, payment_sequential]
+      - entity: olist_order_reviews_dataset
+        path: ./raw/olist_order_reviews_dataset.csv
+        keys: [review_id]
+      - entity: olist_products_dataset
+        path: ./raw/olist_products_dataset.csv
+        keys: [product_id]
+      - entity: olist_sellers_dataset
+        path: ./raw/olist_sellers_dataset.csv
+        keys: [seller_id]
+      delimiter: ','
+  loaders:
+  - name: target-bigquery
+    variant: z3z1ma
+    pip_url: git+https://github.com/z3z1ma/target-bigquery.git
+    config:
+      batch_size: 50000
+      project: [YOUR_PROJECT_ID_HERE]
+      dataset: [YOUR_DATASET_NAME]]
+      credentials_path: [PATH/TO/YOUR/SERVICE_ACCOUNT_KEY.json]  # Not included in repo
+      method: batch_job
+      denormalized: true
+      flattening_enabled: true
+      flattening_max_depth: 1
+
+# 🔐 NOTE: Replace placeholder values and provide your own credentials locally.
+# The credentials JSON file should NOT be included in the GitHub repository.

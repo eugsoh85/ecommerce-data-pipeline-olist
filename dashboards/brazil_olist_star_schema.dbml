@@ -1,0 +1,75 @@
+
+Project ecommerce_star_schema {
+  database_type: "BigQuery"
+  note: "Star schema for Olist dataset supporting Customer 360 and E-commerce Overview dashboards"
+}
+
+Table fct_orders {
+  order_id varchar [pk]
+  customer_id varchar [ref: > dim_customers.customer_id]
+  product_id varchar [ref: > dim_products.product_id]
+  seller_id varchar [ref: > dim_sellers.seller_id]
+  order_date date [ref: > dim_dates.date]
+  payment_type varchar [ref: > dim_payments.payment_type]
+  review_id varchar [ref: > dim_reviews.review_id]
+  order_status varchar
+  is_delivered_on_time boolean
+  total_price float
+  freight_value float
+  delivery_days int
+  category_english varchar [ref: > dim_categories.product_category_name_english]
+}
+
+Table dim_customers {
+  customer_id varchar [pk]
+  customer_unique_id varchar
+  customer_city varchar
+  customer_state varchar
+  customer_zip_code_prefix int
+}
+
+Table dim_products {
+  product_id varchar [pk]
+  product_category_name varchar
+  product_name_length int
+  product_description_length int
+  product_photos_qty int
+  product_weight_g int
+  product_length_cm int
+  product_height_cm int
+  product_width_cm int
+}
+
+Table dim_sellers {
+  seller_id varchar [pk]
+  seller_city varchar
+  seller_state varchar
+}
+
+Table dim_dates {
+  date date [pk]
+  year int
+  month int
+  day int
+  day_of_week int
+  week_of_year int
+  is_weekend boolean
+}
+
+Table dim_payments {
+  payment_type varchar [pk]
+  avg_payment_value float
+  avg_installments float
+}
+
+Table dim_reviews {
+  review_id varchar [pk]
+  review_score int
+  review_creation_date date
+  review_answer_timestamp timestamp
+}
+
+Table dim_categories {
+  product_category_name varchar [pk]
+  product_category_name_english varchar
+}

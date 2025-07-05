@@ -46,6 +46,12 @@ Raw CSV Data → Meltano (EL) → BigQuery → dbt (Staging → Core → Marts) 
 - Product Performance: Top Categories, Seller Metrics
 - Region: Sales by State, Monthly Trends, Category Mix
 
+![E-commerce Overview](dashboards/ecommerce_overview_dashboard.png)
+
+📎 [View Interactive Dashboard](https://lookerstudio.google.com/reporting/6bc1d14d-ad4d-4c80-8fdb-4185c7009335)
+
+
+
 ### 👤 Customer 360 Dashboard
 
 **Purpose**: Equip marketing and CRM teams with data to better segment and engage customers
@@ -55,7 +61,18 @@ Raw CSV Data → Meltano (EL) → BigQuery → dbt (Staging → Core → Marts) 
 - Experience: Fulfilment Days, Review Scores
 - Growth: YOY Growth, Monthly Active Customers
 
+![Customer 360](dashboards/customer360_dashboard.png)
+
+📎 [View Interactive Dashboard](https://lookerstudio.google.com/reporting/d4ae5458-656c-4df2-8329-34a251bea08e)
+
+
 All dashboards are powered by **star schema marts** built in dbt and optimized for Looker Studio performance and scalability.
+
+### 🧩 Data Model: Star Schema
+
+![Star Schema](dashboards/star_schema_diagram.png)
+
+📁 [Download DBML File](dashboards/brazil_olist_star_schema.dbml)
 
 ---
 
