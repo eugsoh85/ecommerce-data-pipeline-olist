@@ -70,7 +70,7 @@ All dashboards are powered by **star schema marts** built in dbt and optimized f
 
 ### 🧩 Data Model: Star Schema
 
-![Star Schema](dashboards/star_schema_diagram.png)
+![Star Schema](dashboards/brazil_olist_star_schema.png)
 
 📁 [Download DBML File](dashboards/brazil_olist_star_schema.dbml)
 
