@@ -46,7 +46,7 @@ Raw CSV Data → Meltano (EL) → BigQuery → dbt (Staging → Core → Marts) 
 - Product Performance: Top Categories, Seller Metrics
 - Region: Sales by State, Monthly Trends, Category Mix
 
-![E-commerce Overview](dashboards/ecommerce_overview_dashboard.png)
+![E-commerce Overview](dashboards/Brazil_OLIST_E-commerce_Dashboard.png)
 
 📎 [View Interactive Dashboard](https://lookerstudio.google.com/reporting/6bc1d14d-ad4d-4c80-8fdb-4185c7009335)
 
@@ -61,7 +61,7 @@ Raw CSV Data → Meltano (EL) → BigQuery → dbt (Staging → Core → Marts) 
 - Experience: Fulfilment Days, Review Scores
 - Growth: YOY Growth, Monthly Active Customers
 
-![Customer 360](dashboards/customer360_dashboard.png)
+![Customer 360](dashboards/Brazil_OLIST_Customer_360.png)
 
 📎 [View Interactive Dashboard](https://lookerstudio.google.com/reporting/d4ae5458-656c-4df2-8329-34a251bea08e)
 
