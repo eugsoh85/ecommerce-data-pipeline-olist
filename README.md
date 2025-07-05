@@ -1,6 +1,6 @@
 # End-to-End Data Pipeline and Executive Dashboards for Brazil E-Commerce (Olist)
 
-Module 2 Assignment Project – ELT Pipeline with Meltano, dbt, Dagster & Looker Studio
+ELT Pipeline with Meltano, dbt, Dagster & Looker Studio
 
 ## 🚀 Overview
 
